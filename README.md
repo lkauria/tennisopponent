@@ -4,6 +4,12 @@ Web page (Heroku production): https://tennisopponent.herokuapp.com/
 
 GitHub (source code): https://github.com/lkauria/tennisopponent
 
+Database diagram: https://github.com/lkauria/tennisopponent/blob/master/Database_diagram.svg
+
+User stories: link to documentation --> user stories (folder)
+
+
+
 
 Keep records of your opponents and games
 

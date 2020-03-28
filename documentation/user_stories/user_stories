@@ -1,0 +1,12 @@
+These user stories are prioritized
+
+1. User can add a opponent and write opponents strengths and weaknesses.
+2. User can add a game scores and for each game to relate an opponent.
+3. User can see a list off opponents.
+
+Nice to have
+
+4. User can remove an opponent
+5. User can update information about the opponent
+6. User can remove game
+7. User can update game information eg. scores or opponent
