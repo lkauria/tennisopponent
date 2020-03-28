@@ -1,8 +1,8 @@
 # tennisopponent
 
-Sivusto (tuotannossa): https://tennisopponent.herokuapp.com/
+Web page (Heroku production): https://tennisopponent.herokuapp.com/
 
-GitHub (lähdekoodi): https://github.com/lkauria/tennisopponent
+GitHub (source code): https://github.com/lkauria/tennisopponent
 
 
 Keep records of your opponents and games
