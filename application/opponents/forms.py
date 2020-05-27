@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
 
-class TaskForm(FlaskForm):
+class OpponentForm(FlaskForm):
     name = StringField("Opponent's name")
  
     class Meta:

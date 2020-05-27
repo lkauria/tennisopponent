@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Opponent</th>
+      <th></th>
+    </tr>
+    {% for opponent in opponents %}
+    <tr>
+      <td>{{ opponent.name }}</td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
