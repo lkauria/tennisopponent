@@ -5,7 +5,7 @@ from application.opponents.forms import OpponentForm
 
 @app.route("/opponents", methods=["GET"])
 def opponents_index():
-    return render_template("opponents/list.html", tasks = Opponent.query.all())
+    return render_template("opponents/list.html", opponents = Opponent.query.all())
 
 @app.route("/opponents/new/")
 def opponents_form():
@@ -21,7 +21,7 @@ def opponents_set_done(opponents_id):
 
 @app.route("/opponents/", methods=["POST"])
 def opponents_create():
-    t = Task(request.form.get("name"))
+    t = Opponent(request.form.get("name"))
 
     db.session().add(t)
     db.session().commit()
