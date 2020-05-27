@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField
 
 class TaskForm(FlaskForm):
-    name = StringField("Task name")
+    name = StringField("Opponent's name")
  
     class Meta:
         csrf = False
