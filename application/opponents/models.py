@@ -7,11 +7,11 @@ class Opponent(db.Model):
     onupdate=db.func.current_timestamp())
 
     name = db.Column(db.String(144), nullable=False)
-    year_of_birth = db.Column(db.Integer, nullable=True)
+    year_of_birth = db.Column(db.String(4), nullable=False)
     strengths = db.Column(db.String(10000), nullable=True)
     weaknesses = db.Column(db.String(10000), nullable=True)
 
-    def __init__(self, name, year_of_birth, strengths, weaknesses):
+    def __init__(name, year_of_birth, strengths, weaknesses):
         self.name = name
         self.year_of_birth = year_of_birth
         self.strengths = strengths

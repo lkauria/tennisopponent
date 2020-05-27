@@ -21,7 +21,7 @@ def opponents_set_done(opponents_id):
 
 @app.route("/opponents/", methods=["POST"])
 def opponents_create():
-    t = Opponent(request.form.get("name"))
+    t = Opponent(request.form.get("name", "year_of_birth", "strenghts", "weaknesses"))
 
     db.session().add(t)
     db.session().commit()
