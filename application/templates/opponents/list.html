@@ -4,13 +4,16 @@
   <table>
     <tr>
       <th>Opponent</th>
+      <th>Year of birth</th>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
       <th></th>
     </tr>
     {% for opponent in opponents %}
     <tr>
       <td>{{ opponent.name }}</td>
       <td>{{ opponent.year_of_birth }}</td>
-      <td>{{ opponent.strenghts }}</td>
+      <td>{{ opponent.strengths }}</td>
       <td>{{ opponent.weaknesses }}</td>
     </tr>
     {% endfor %}
