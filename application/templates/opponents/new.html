@@ -3,6 +3,7 @@
 {% block body %}
 <form method="POST" action="{{ url_for('opponents_create') }}">
   <input type="text" name="name"/>
+  <input type="text" year_of_birth="year_of_birth"/>
   <input type="submit" value="Add a new opponent"/>
 </form>
 {% endblock %}

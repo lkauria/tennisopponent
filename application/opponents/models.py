@@ -11,5 +11,8 @@ class Opponent(db.Model):
     strengths = db.Column(db.String(10000), nullable=True)
     weaknesses = db.Column(db.String(10000), nullable=True)
 
-    def __init__(self, name):
+    def __init__(self, name, year_of_birth, strengths, weaknesses):
         self.name = name
+        self.year_of_birth = year_of_birth
+        self.strengths = strengths
+        self.weaknesses = weaknesses
