@@ -1,11 +1,45 @@
 {% extends "layout.html" %}
-  
+
 {% block body %}
-<form method="POST" action="{{ url_for('opponents_create') }}">
-  <input type="text" name="name"/>
-  <input type="text" name="year_of_birth"/>
-  <input type="text" name="strengths"/>
-  <input type="text" name="weaknesses"/>
-  <input type="submit" value="Add a new opponent"/>
-</form>
+<table>
+  <form method="POST" action="{{ url_for('opponents_create') }}">
+    <tr>
+      <td>
+        {{ form.name.label }}
+      </td>
+      <td>
+        {{ form.name }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.year_of_birth.label }}
+      </td>
+      <td>
+        {{ form.year_of_birth }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.strengths.label }}
+      </td>
+      <td>
+        {{ form.strengths }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.weaknesses.label }}
+      </td>
+      <td>
+        {{ form.weaknesses }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" value="Add a new opponent" />
+      </td>
+    </tr>
+  </form>
+</table>
 {% endblock %}
