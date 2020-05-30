@@ -26,7 +26,11 @@ def opponents_change_values(opponents_id):
 @app.route("/opponents/", methods=["POST"])
 def opponents_create():
 
-    
+    form = OpponentForm(request.form)
+
+    if not form.validate():
+        return render_template("opponents/new.html", form = form)
+
     getter = itemgetter("name", "year_of_birth", "strengths", "weaknesses")
     values = getter(request.form)
     t = Opponent(*values)
