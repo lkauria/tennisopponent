@@ -1,15 +1,17 @@
 from application import db
 
+
 class Opponent(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
-    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
-    onupdate=db.func.current_timestamp())
+    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
     name = db.Column(db.String(144), nullable=False)
     year_of_birth = db.Column(db.String(4), nullable=False)
     strengths = db.Column(db.String(10000), nullable=True)
     weaknesses = db.Column(db.String(10000), nullable=True)
+
+    account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
 
     def __init__(self, name, year_of_birth, strengths, weaknesses):
         self.name = name
