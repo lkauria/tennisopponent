@@ -1,5 +1,5 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from application import app, db
 from application.opponents.models import Opponent
@@ -35,9 +35,12 @@ def opponents_create():
     if not form.validate():
         return render_template("opponents/new.html", form = form)
 
+
     getter = itemgetter("name", "year_of_birth", "strengths", "weaknesses")
     values = getter(request.form)
     t = Opponent(*values)
+
+    t.account_id = current_user.id
 
     db.session().add(t)
     db.session().commit()
