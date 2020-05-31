@@ -1,5 +1,7 @@
-from application import app, db
 from flask import redirect, render_template, request, url_for
+from flask_login import login_required
+
+from application import app, db
 from application.opponents.models import Opponent
 from application.opponents.forms import OpponentForm
 from operator import itemgetter
@@ -9,14 +11,15 @@ def opponents_index():
     return render_template("opponents/list.html", opponents = Opponent.query.all())
 
 @app.route("/opponents/new/")
+@login_required
 def opponents_form():
     return render_template("opponents/new.html", form = OpponentForm())
   
 @app.route("/opponents/<opponents_id>/", methods=["POST"])
+@login_required
 def opponents_change_values(opponents_id):
 
     t = Opponent.query.get(opponent_id)
-    #example:  --> t.done = True
     db.session().commit()
   
     return redirect(url_for("opponents_index"))
@@ -24,6 +27,7 @@ def opponents_change_values(opponents_id):
 
 
 @app.route("/opponents/", methods=["POST"])
+@login_required
 def opponents_create():
 
     form = OpponentForm(request.form)
