@@ -3,4 +3,3 @@ __pycache__
 .DS_Store
 opponents.db
 .vscode
-application/opponents.db
